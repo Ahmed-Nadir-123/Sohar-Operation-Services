@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sohar Operation Services LLC</title>
+    <meta name="description" content="Get in touch with Sohar Operation Services LLC for your water solutions needs. Contact our expert team for inquiries about desalination, sustainability, and water management services.">
+    
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#1365b8">
+    <meta name="color-scheme" content="light">
+    
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!--Icon Labrary-->
+    <script src="https://kit.fontawesome.com/0fe057ed38.js" crossorigin="anonymous"></script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1365b8 0%, #2e2b92 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1365b8 0%, #2cb2ed 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Accessibility Improvements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 4px;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Focus styles for better accessibility */
+        *:focus {
+            outline: 3px solid #2cb2ed;
+            outline-offset: 2px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .gradient-text {
+                background: none;
+                -webkit-text-fill-color: initial;
+                color: #2d3748;
+            }
+        }
+        
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .navbar {
+            position: fixed;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0rem 0;
+        }
+
+        .navbar.at-top {
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: none;
+        }
+
+        .navbar.at-top .gradient-text {
+            background: linear-gradient(135deg, #2e2b92 0%, #2cb2ed 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navbar.at-top .nav-link {
+            color: white !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar.at-top .nav-link:hover {
+            color: #60a5fa !important;
+            text-shadow: none;
+        }
+
+        .navbar.at-top .text-brand-blue {
+            color: #60a5fa !important;
+            font-weight: 700;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled .gradient-text {
+            background: linear-gradient(45deg, #1E40AF, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: #374151 !important;
+            text-shadow: none;
+        }
+       .navbar.scrolled .nav-link:focus{
+            color: #1365b8 !important;
+            text-shadow: none;
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            color: #1E40AF !important;
+        }
+
+        .navbar.scrolled .text-brand-blue {
+            color: #1365b8 !important;
+            font-weight: 700;
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Brand color overrides */
+        .nav-link:hover {
+            color: #1365b8 !important;
+        }
+        
+        .btn-primary {
+            background-color: #1365b8;
+            border-color: #1365b8;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2e2b92;
+            border-color: #2e2b92;
+        }
+        
+        .text-brand-blue {
+            color: #1365b8;
+        }
+        
+        .bg-brand-blue {
+            background-color: #1365b8;
+        }
+        
+        .border-brand-blue {
+            border-color: #1365b8;
+        }
+        
+        .form-input {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #1365b8;
+            box-shadow: 0 0 0 3px rgba(19, 101, 184, 0.1);
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar at-top w-full z-50 shadow-lg" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-16 w-16">
+                    <div class="text-2xl font-bold gradient-text">
+                        Sohar Operation Services
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 nav-link transition duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-700 nav-link transition duration-300 font-medium">About</a>
+                    <a href="contact.html" class="text-brand-blue nav-link transition duration-300 font-black">Contact</a>
+                    <a href="https://form.jotform.com/251061143545448" target="_blank" class="text-gray-700 nav-link transition duration-300 font-medium">Internship</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" 
+                            class="text-gray-700 nav-link"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            aria-label="Open navigation menu">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50" role="dialog" aria-labelledby="mobile-menu-title" aria-hidden="true">
+            <div class="flex items-center justify-between p-4 border-b">
+                <span id="mobile-menu-title" class="text-xl font-bold gradient-text">Menu</span>
+                <button id="mobile-menu-close" 
+                        class="text-gray-700"
+                        aria-label="Close navigation menu">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="py-4">
+                <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+                <a href="contact.html" class="block px-4 py-2 text-brand-blue font-semibold bg-gray-100">Contact</a>
+                <a href="https://form.jotform.com/251061143545448" target="_blank" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100">Internship Form</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <main id="main-content" class="py-8 md:py-20 bg-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Left Side - Welcome Message & Contact Info -->
+                    <div class="w-full lg:w-1/2 gradient-bg text-white p-6 md:p-12 relative overflow-hidden">
+                <!-- Water drop background decorations -->
+                <div class="absolute top-10 left-5 w-16 h-16 md:w-32 md:h-32 md:top-20 md:left-10 bg-white opacity-10 rounded-full"></div>
+                <div class="absolute bottom-10 right-10 w-24 h-24 md:w-48 md:h-48 md:bottom-20 md:right-20 bg-white opacity-5 rounded-full"></div>
+                <div class="absolute top-1/2 right-5 w-12 h-12 md:w-20 md:h-20 md:right-10 bg-white opacity-15 rounded-full"></div>
+                
+                <div class="relative z-10">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Get in Touch!</h1>
+                    <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-12 text-blue-100 leading-relaxed">
+                        We safeguard the water to meet your needs. Connect with our expert team for sustainable water solutions.
+                    </p>
+                    
+                    <!-- Contact Information -->
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="flex items-center text-sm md:text-base lg:text-lg">
+                            <i class="fas fa-envelope mr-3 md:mr-4 text-lg md:text-2xl text-blue-200"></i>
+                            <span>info@sos.com.om</span>
+                        </div>
+                        
+                        <div class="flex items-center text-sm md:text-base lg:text-lg">
+                            <i class="fas fa-phone mr-3 md:mr-4 text-lg md:text-2xl text-blue-200"></i>
+                            <span>+968 22354902</span>
+                        </div>
+                        
+                        <div class="flex items-center text-sm md:text-base lg:text-lg">
+                            <i class="fas fa-map-marker-alt mr-3 md:mr-4 text-lg md:text-2xl text-blue-200"></i>
+                            <span>Sohar Industrial Port, Oman</span>
+                        </div>
+                        <br><br>
+                    </div>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex space-x-3 md:space-x-4 mt-6 md:mt-8">
+                        <a href="https://www.linkedin.com/company/sohar-operation-services-llc/" target="_blank" 
+                           class="w-10 h-10 md:w-12 md:h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-linkedin text-white text-lg md:text-xl"></i>
+                        </a>
+                        <a href="https://x.com/soswater11" target="_blank" 
+                           class="w-10 h-10 md:w-12 md:h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fa-brands fa-x-twitter text-white text-lg md:text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sos.water?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" 
+                           class="w-10 h-10 md:w-12 md:h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-instagram text-white text-lg md:text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Contact Form -->
+            <div class="w-full lg:w-1/2 bg-white p-6 md:p-12">
+                <div class="max-w-md mx-auto w-full">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 gradient-text">Contact Us</h2>
+                    <p class="text-sm md:text-base text-gray-600 mb-6 md:mb-8">Send us a message and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm" class="space-y-4 md:space-y-6" action="#" method="POST">
+                        <div>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required 
+                                class="w-full px-4 py-3 md:py-4 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition duration-300 text-sm md:text-base"
+                                placeholder="Name"
+                            >
+                        </div>
+                        
+                        <div>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                class="w-full px-4 py-3 md:py-4 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition duration-300 text-sm md:text-base"
+                                placeholder="Email"
+                            >
+                        </div>
+                        
+                        <div>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="w-full px-4 py-3 md:py-4 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition duration-300 text-sm md:text-base"
+                                placeholder="Phone Number (Optional)"
+                            >
+                        </div>
+                        
+                        <div>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="4" 
+                                required 
+                                class="w-full px-4 py-3 md:py-4 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition duration-300 resize-none text-sm md:text-base"
+                                placeholder="Message"
+                            ></textarea>
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            id="submitBtn"
+                            class="w-full gradient-bg text-white py-3 md:py-4 px-6 rounded-lg font-semibold text-base md:text-lg hover:shadow-lg transform hover:scale-105 transition duration-300 flex items-center justify-center space-x-2"
+                        >
+                            <span id="btnText">SEND MESSAGE</span>
+                            <i id="btnIcon" class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <p class="text-green-700 font-medium">Message sent successfully!</p>
+                        </div>
+                        <p class="text-green-600 text-sm mt-1">Thank you for contacting us. We'll get back to you soon.</p>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                            <p class="text-red-700 font-medium">Failed to send message</p>
+                        </div>
+                        <p class="text-red-600 text-sm mt-1" id="errorText">Please try again later or contact us directly.</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center text-2xl font-bold gradient-text mb-4">
+                        <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-10 w-10 mr-3">
+                        Sohar Operation Services
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Leading water solutions provider in Oman, operating the country's second-largest desalination plant 
+                        and pioneering sustainable water technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/sohar-operation-services-llc/" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-linkedin text-gray-300"></i>
+                        </a>
+                        <a href="https://x.com/soswater11" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fa-brands fa-x-twitter text-gray-300"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sos.water?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-instagram text-gray-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="index.html#achievements" class="text-gray-400 hover:text-white transition duration-300">Achievements</a></li>
+                        <li><a href="about.html#lab" class="text-gray-400 hover:text-white transition duration-300">SOS Laboratory</a></li>
+                        <li><a href="about.html#partnerships" class="text-gray-400 hover:text-white transition duration-300">Academic Partnerships</a></li>
+                        <li><a href="about.html#team" class="text-gray-400 hover:text-white transition duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Water Desalination</span></li>
+                        <li><span class="text-gray-400">Carbon Capture</span></li>
+                        <li><span class="text-gray-400">Operation & Maintenance</span></li>
+                        <li><span class="text-gray-400">Quality Management</span></li>
+                        <li><span class="text-gray-400">Safety & Environment</span></li>
+                        <li><span class="text-gray-400">Strategic Consulting</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <a href="https://maps.app.goo.gl/cMhWsF5NZ3svkwJw9" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                    <p>Liwa, Oman</p>
+                                    <p>Sohar Industrial Port Area</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <a href="mailto:info@sos.com.om" class="text-gray-400 hover:text-white transition duration-300">info@sos.com.om</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <a href="tel:+96822354902" class="text-gray-400 hover:text-white transition duration-300">+968 22354902</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 mt-12 py-8">
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-gray-400 mb-4">
+                        © 2025 Sohar Operation Services LLC. All rights reserved.
+                    </p>
+                    <div>
+                        <a href="https://github.com/Ahmed-Nadir-123" class="text-gray-400 hover:text-white transition duration-300">Built by Ahmed-Nadir-123</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+            }
+        });
+        
+        // Close mobile menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.focus();
+            }
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        
+        function updateNavbar() {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('at-top');
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('at-top');
+            }
+        }
+        
+        // Initial check
+        updateNavbar();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', updateNavbar);
+        
+        // Initialize EmailJS
+        emailjs.init("WhkkGdfMWXmt1N5_B"); // Using the same public key from your working form
+
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+
+        // Form submission handling with EmailJS
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            btnIcon.className = 'fas fa-spinner fa-spin';
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+
+            // Get form data
+            const formData = new FormData(form);
+            const templateParams = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || 'Not provided',
+                message: formData.get('message'),
+                to_email: 'info@sos.com.om' // Your email
+            };
+
+            // Send email using EmailJS
+            emailjs.send(
+                'service_8mr4i15', // Using the same service ID from your working form
+                'template_pva6ali', // Using the same template ID from your working form
+                templateParams
+            ).then(function(response) {
+                // Success
+                console.log('Email sent successfully:', response);
+                
+                // Show success message
+                successMessage.classList.remove('hidden');
+                form.reset();
+                
+            }).catch(function(error) {
+                // Error
+                console.error('Email send failed:', error);
+                
+                // Show error message
+                errorMessage.classList.remove('hidden');
+                errorText.textContent = 'Please try again later or contact us directly at info@sos.com.om';
+                
+            }).finally(function() {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.textContent = 'SEND MESSAGE';
+                btnIcon.className = 'fas fa-paper-plane';
+            });
+        });
+
+        // Form validation and UX improvements
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.classList.add('border-red-300');
+                } else {
+                    this.classList.remove('border-red-300');
+                }
+            });
+
+            input.addEventListener('input', function() {
+                this.classList.remove('border-red-300');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohar Operation Services LLC - Leading Water Solutions Provider in Oman</title>
+    <meta name="description" content="Sohar Operation Services LLC operates Oman's second-largest desalination plant, producing 250,000 m³ of water daily and pioneering sustainable water solutions with innovative carbon capture technology.">
+    
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#1365b8">
+    <meta name="color-scheme" content="light">
+    
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <!--Icon Labrary-->
+    <script src="https://kit.fontawesome.com/0fe057ed38.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar at-top w-full z-50 shadow-lg" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-16 w-16">
+                    <div class="text-2xl font-bold gradient-text">
+                        Sohar Operation Services
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-brand-blue nav-link transition duration-300 font-black">Home</a>
+                    <a href="about.html" class="text-gray-700 nav-link transition duration-300 font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 nav-link transition duration-300 font-medium">Contact</a>
+                    <a href="https://form.jotform.com/251061143545448" target="_blank" class="text-gray-700 nav-link transition duration-300 font-medium">Internship</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" 
+                            class="text-gray-700 nav-link"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            aria-label="Open navigation menu">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50" role="dialog" aria-labelledby="mobile-menu-title" aria-hidden="true">
+            <div class="flex items-center justify-between p-4 border-b">
+                <span id="mobile-menu-title" class="text-xl font-bold gradient-text">Menu</span>
+                <button id="mobile-menu-close" 
+                        class="text-gray-700"
+                        aria-label="Close navigation menu">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="py-4">
+                <a href="index.html" class="block px-4 py-2 text-brand-blue font-semibold bg-gray-100">Home</a>
+                <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+                <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+                <a href="https://form.jotform.com/251061143545448" target="_blank" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100">Internship Form</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-28 relative overflow-hidden">
+        <!-- Video Background -->
+        <div class="hero-video-container" id="hero-video-container">
+            <video class="hero-video" id="hero-video" autoplay muted playsinline>
+                <source src="hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- Fallback Image Background -->
+        <div class="hero-image-bg" id="hero-image-bg"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content text-center max-w-4xl mx-auto px-4" id="hero-content">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    We safeguard the water to Your Needs
+                    <span class="block gradient-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text">
+                        
+                    </span>
+                </h1>
+            </div>
+            <div class="fade-in fade-in-delay-1">
+                <br><br>
+            </div>
+            <div class="fade-in fade-in-delay-2">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="about.html" class="btn-primary text-white px-8 py-4 rounded-full font-semibold transition duration-300 shadow-lg">
+                        Learn More
+                    </a>
+                    <a href="contact.html" class="border-2 border-white text-white btn-outline-brand px-8 py-4 rounded-full font-semibold transition duration-300">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating-animation hero-content" id="floating-arrow">
+            <i class="fas fa-chevron-down text-white text-2xl animate-bounce"></i>
+        </div>
+    </section>
+
+    
+    <!-- Brief About Section -->
+    <main id="main-content">
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Company Overview -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">About Sohar Operation Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    
+                </p>
+            </div>
+            
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center px-20">
+                <!-- Company Image -->
+                <div class="fade-in">
+                    <img src="https://spingroup.global/wp-content/uploads/2020/02/CB1_2811-1024x681.jpg" 
+                         alt="Sohar Desalination Plant Facility showcasing modern water treatment infrastructure" 
+                         class="rounded-lg shadow-xl w-full water-animation"
+                         loading="lazy">
+                </div>
+                
+                <!-- Mission & Key Points -->
+                <div class="fade-in fade-in-delay-1">
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Sohar Operation Services Company L.L.C. (SOS) is the dedicated Operations and Maintenance contractor for Myah Gulf Oman Desalination Company (MGODC), operating the Sohar 4 Independent Water Project—one of the largest seawater reverse osmosis desalination plants in the Sultanate of Oman, with a production capacity of 250,000 cubic meters per day.
+                    </p>
+                    <div class="mt-8">
+                        <a href="about.html" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transition duration-300 shadow-lg inline-block">
+                            Learn More About Us
+                        </a>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Stats Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
+                <div class="fade-in">
+                    <div class="counter" style="color: white;" id="water-production">250,000</div>
+                    <p class="text-lg">m³ Water Daily</p>
+                </div>
+                <div class="fade-in fade-in-delay-1">
+                    <div class="counter" style="color: white;" id="years-operation">20</div>
+                    <p class="text-lg">Years Contract</p>
+                </div>
+                <div class="fade-in fade-in-delay-2">
+                    <div class="counter" style="color: white;" id="founding-year">2019</div>
+                    <p class="text-lg">Founded</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section with Water Drop Cards -->
+    <section id="services" class="py-20 bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Comprehensive water solutions from operation to innovation.
+                </p>
+            </div>
+            
+            <!-- Water Drop Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Drop Card 1: Operation & Maintenance -->
+                <div class="drop fade-in">
+                    <div class="drop-content">
+                        <i class="fas fa-cogs drop-icon"></i>
+                        <h3 class="drop-title">Operation & Maintenance</h3>
+                        <p class="drop-description">
+                            Comprehensive O&M services for the Sohar 4 IWP, managing daily operations and maintenance 
+                            of the 250,000 m³/day seawater reverse osmosis desalination facility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Drop Card 2: Laboratory Services -->
+                <div class="drop fade-in fade-in-delay-1">
+                    <div class="drop-content">
+                        <i class="fas fa-flask drop-icon"></i>
+                        <h3 class="drop-title">SOS Laboratory® Services</h3>
+                        <p class="drop-description">
+                            ISO/IEC 17025 accredited testing facility providing comprehensive water quality analysis 
+                            and microbiological testing services.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Drop Card 3: Safety Excellence -->
+                <div class="drop fade-in fade-in-delay-2">
+                    <div class="drop-content">
+                        <i class="fas fa-shield-alt drop-icon"></i>
+                        <h3 class="drop-title">Safety Excellence</h3>
+                        <p class="drop-description">
+                            LTI-free operations with comprehensive safety programs and ISO 45001 certification 
+                            ensuring the highest safety standards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Drop Card 4: Quality Management -->
+                <div class="drop fade-in">
+                    <div class="drop-content">
+                        <i class="fas fa-award drop-icon"></i>
+                        <h3 class="drop-title">Quality Management</h3>
+                        <p class="drop-description">
+                            Multiple ISO certifications ensuring excellence in quality, environmental management, 
+                            and continuous improvement across all operations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Drop Card 5: Academic Partnerships -->
+                <div class="drop fade-in fade-in-delay-1">
+                    <div class="drop-content">
+                        <i class="fas fa-graduation-cap drop-icon"></i>
+                        <h3 class="drop-title">Academic Partnerships</h3>
+                        <p class="drop-description">
+                            Collaborating with leading academic institutions through formal MOUs for training, research, and knowledge development 
+                            in water technology and management, supporting Oman Vision 2040.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Drop Card 6: Regulatory Compliance -->
+                <div class="drop fade-in fade-in-delay-2">
+                    <div class="drop-content">
+                        <i class="fas fa-balance-scale drop-icon"></i>
+                        <h3 class="drop-title">Regulatory Compliance</h3>
+                        <p class="drop-description">
+                            Ensuring strict compliance with regulatory and environmental standards while maintaining 
+                            operational excellence and sustainability in all aspects of plant performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section - CEO Only -->
+    <section id="team" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 fade-in">Our Leadership</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Meet our award-winning General Manager driving innovation and excellence in water solutions
+                </p>
+            </div>
+            
+            <div class="flex justify-center">
+                <!-- Modern CEO Card -->
+                <div class="bg-white rounded-2xl md:rounded-3xl shadow-2xl border border-gray-100 max-w-6xl w-full overflow-hidden relative">
+                    <!-- Water drops texture overlay - reduced to stop around "water" -->
+                    <div class="absolute -left-[60px] md:-left-[120px] inset-y-0 right-0 opacity-30 md:opacity-50 z-0">
+                        <img src="pngimg.com - water_PNG3283.png" 
+                             alt="Water drops texture" 
+                             class="w-full h-full object-cover opacity-70 scale-[200%] md:scale-[250%] transform origin-right">
+                    </div>
+                    
+                    <div class="flex flex-col lg:flex-row min-h-[400px] md:min-h-[500px] relative z-10">
+                        <!-- Content - Left Side -->
+                        <div class="flex-1 p-6 md:p-12 lg:p-16 flex flex-col justify-center">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Badge -->
+                                <div class="inline-flex items-center px-3 md:px-4 py-2 text-blue-800 rounded-full text-xs md:text-sm font-semibold">
+                                    <img src="Award-3.webp" alt="Global Recognition Award" class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mr-2 object-contain">
+                                    <span class="hidden sm:inline">Global Recognition Award 2024</span>
+                                    <span class="sm:hidden">GRA 2024</span>
+                                </div>
+                                
+                                <!-- Name & Title -->
+                                <div>
+                                    <h3 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 md:mb-3">Abdullah AL-Sadi</h3>
+                                    <p class="text-lg md:text-xl lg:text-2xl text-blue-600 font-semibold">General Manager</p>
+                                </div>
+                                
+                                <!-- Description -->
+                                <p class="text-sm md:text-lg lg:text-xl text-gray-600 leading-relaxed px-0 md:px-4">
+                                    Visionary leader driving innovation and excellence in water solutions. 
+                                    Spearheading sustainable initiatives and operational excellence across 
+                                    the region's largest desalination facilities.
+                                </p>
+                                
+                                <!-- Actions -->
+                                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 mt-4 md:mt-6">
+                                    
+                                    <a href="about.html#team" class="inline-flex items-center text-blue-600 font-semibold text-sm md:text-base lg:text-lg hover:text-blue-700 transition-colors duration-300 group">
+                                        <span class="hidden sm:inline">Meet Our Full Team</span>
+                                        <span class="sm:hidden">Full Team</span>
+                                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image - Right Side -->
+                        <div class="w-full lg:w-2/5 relative overflow-hidden min-h-[250px] md:min-h-[300px] lg:min-h-[400px]">
+                            
+                            <!-- Person Image with transparent background -->
+                            <div class="absolute inset-0 flex items-end justify-center z-10">
+                                <div class="relative w-full max-w-xs md:max-w-sm lg:max-w-none">
+                                    <img src="Abdullah-AL-Sadi.png" 
+                                         alt="Abdullah AL-Sadi - General Manager" 
+                                         class="w-full h-auto object-contain object-center drop-shadow-2xl relative z-10">
+                                    <!-- Subtle glow effect behind the image -->
+                                    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-xl md:rounded-2xl blur-lg md:blur-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="py-60 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">Our Operations Gallery</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Explore our state-of-the-art facilities and advanced water treatment operations
+                </p>
+            </div>
+            
+            <!-- Image Slider -->
+            <div class="relative w-full h-[40vh] md:h-[50vh] bg-gray-900 overflow-hidden rounded-lg">
+                <img id="galleryImage" 
+                     src="" 
+                     alt="Gallery Image" 
+                     class="w-full h-full object-cover">
+                
+                <!-- Navigation Arrows -->
+                <button id="prevBtn" 
+                        class="absolute left-8 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white text-4xl transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" 
+                        class="absolute right-8 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white text-4xl transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Slide Indicators (Dots) -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+                    <div id="indicators" class="flex space-x-3">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Achievements Section -->
+    <section id="achievements" class="pb-60 pt-16 single-blue-bg" style="box-shadow: 0px -30px 60px 60px #1365b8;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in">Our Achievements</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Pioneering sustainable water solutions and setting new standards in environmental stewardship
+                </p>
+            </div>
+            
+            <!-- ISO Certifications with 3D Marquee -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16 fade-in px-8">
+                <!-- Text Content - Left Side -->
+                <div>
+                    
+                        <img src="ISO-logo.png" alt="ISO Logo" class="w-24 h-24 object-contain mb-16">
+                    
+                    <h3 class="text-3xl font-bold text-white mb-4">Multiple ISO Certifications</h3>
+                    <p class="text-blue-100 mb-6 leading-relaxed">
+                        SOS proudly maintains multiple internationally recognized certifications, demonstrating our integrated approach 
+                        to quality, environmental stewardship, occupational health, energy efficiency, and asset management.
+                    </p>
+                    
+                </div>
+                
+                <!-- Magic UI 3D Marquee - Right Side -->
+                <div class="relative h-96 overflow-hidden">
+                    <div class="marquee-3d-container">
+                            <div class="marquee-3d-wrapper">
+                                <!-- First Column -->
+                                <div class="marquee-column">
+                                    <div class="marquee marquee-vertical" data-duration="20s">
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second Column (Reverse) -->
+                                <div class="marquee-column">
+                                    <div class="marquee marquee-vertical marquee-reverse" data-duration="22s">
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Third Column -->
+                                <div class="marquee-column">
+                                    <div class="marquee marquee-vertical" data-duration="24s">
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fourth Column (Reverse) -->
+                                <div class="marquee-column">
+                                    <div class="marquee marquee-vertical marquee-reverse" data-duration="26s">
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                        <div class="marquee-content">
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-badge.jpg" alt="ISO 55001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC-2.png" alt="ISO 14001 Alternative" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-2015-CertificadoGAC.png" alt="ISO 9001 2015" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC.png" alt="ISO 50001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-badge.jpg" alt="ISO 45001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-17025-2017- LB-TEST-257.png" alt="ISO 17025" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-badge.jpg" alt="ISO 9001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-2015-CertificadoGAC.png" alt="ISO 14001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-badge.jpg" alt="ISO 50001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-9001-CertificadoGAC.png" alt="ISO 9001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-45001-2023-CertificadoGAC.png" alt="ISO 45001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-55001-CertificadoGAC-2022.png" alt="ISO 55001" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-14001-badge.jpg" alt="ISO 14001 Badge" class="certificate-img">
+                                            </div>
+                                            <div class="certificate-card">
+                                                <img src="certificates/ISO-50001-2018-CertificadoGAC-2.png" alt="ISO 50001 Alternative" class="certificate-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Smooth fade overlays matching section background -->
+                            <div class="gradient-overlay gradient-top"></div>
+                            <div class="gradient-overlay gradient-bottom"></div>
+                            <div class="gradient-overlay gradient-left"></div>
+                            <div class="gradient-overlay gradient-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Company Timeline Section -->
+    <section id="timeline" class="timeline-section py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Journey</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From establishment to excellence, discover the milestones that shaped our commitment to water solutions
+                </p>
+            </div>
+            
+            <div class="timeline-container">
+                <!-- Animated timeline line -->
+                <div class="timeline-line" id="timeline-line"></div>
+                
+                <!-- Timeline Item 1 - 2019 SOS Established -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title">SOS Established</h3>
+                        <p class="timeline-description">
+                            Sohar Operation Services LLC was established as the dedicated Operations and Maintenance contractor for 
+                            Myah Gulf Oman Desalination Company (MGODC), marking the beginning of our commitment to operational excellence 
+                            in water solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 - August 2019 Commercial Operations -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2019</div>
+                        <h3 class="timeline-title">Commercial Operations Begin</h3>
+                        <p class="timeline-description">
+                            The Sohar 4 Independent Water Project commenced commercial operations with a massive capacity of 250,000 m³ 
+                            of desalinated water per day, becoming Oman's second-largest desalination facility and serving over 220,000 people.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 - 2020 First ISO Certifications -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3 class="timeline-title">First ISO Certifications</h3>
+                        <p class="timeline-description">
+                            SOS achieved multiple ISO certifications including ISO 9001 (Quality Management), ISO 14001 (Environmental Management), 
+                            and ISO 45001 (Occupational Health & Safety), establishing our commitment to international standards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 - 2021 Laboratory Accreditation -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title">SOS Laboratory® Accreditation</h3>
+                        <p class="timeline-description">
+                            Our in-house laboratory achieved ISO/IEC 17025 accreditation, enabling comprehensive water quality testing, 
+                            microbiological analysis, and heavy metal detection services with internationally recognized standards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 - 2022 Asset Management Excellence -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Asset Management Excellence</h3>
+                        <p class="timeline-description">
+                            SOS achieved ISO 55001 certification for Asset Management and ISO 50001 for Energy Management, 
+                            demonstrating our commitment to efficient resource utilization and sustainable operations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 - 2023 Safety Milestone -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title">LTI-Free Operations</h3>
+                        <p class="timeline-description">
+                            Achieved a significant safety milestone with Lost Time Injury (LTI) free operations, reinforcing our 
+                            ISO 45001 certification and demonstrating unwavering commitment to workplace safety and employee wellbeing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 - 2024 Academic Partnerships -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">Academic Partnerships & Recognition</h3>
+                        <p class="timeline-description">
+                            Established strategic partnerships with five academic institutions through formal MOUs: University of Technology and Applied Sciences (Sohar & Shinas), 
+                            Sohar University, IMCO, and Al Kaboura Vocational College for training and research initiatives supporting Oman Vision 2040.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 8 - 2025 Future Vision -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 & Beyond</div>
+                        <h3 class="timeline-title">Sustainable Future</h3>
+                        <p class="timeline-description">
+                            Continuing our journey toward innovation and sustainability with advanced carbon capture technology, 
+                            expanded research partnerships, and pioneering solutions that will shape the future of water management in the region.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Scroll-Controlled Video Section -->
+    <section class="scroll-video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <canvas id="scrollCanvas"></canvas>
+                <video id="hiddenVideo" preload="auto" muted style="display: none;">
+                    <source src="while-scroll-video.mp4" type="video/mp4">
+                </video>
+                
+                <div class="progress-indicator">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact CTA Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in">Ready to Work With Us?</h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8 fade-in fade-in-delay-1">
+                    Ready to discuss your water solutions needs? Get in touch with our team of experts
+                </p>
+                <a href="contact.html" class="bg-white text-brand-blue px-8 py-4 rounded-full font-semibold transition duration-300 shadow-lg hover:shadow-xl inline-block fade-in fade-in-delay-2">
+                    Contact Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center text-2xl font-bold gradient-text mb-4">
+                        <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-10 w-10 mr-3">
+                        Sohar Operation Services
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Leading water solutions provider in Oman, operating the country's second-largest desalination plant 
+                        and pioneering sustainable water technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/sohar-operation-services-llc/" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-linkedin text-gray-300"></i>
+                        </a>
+                        <a href="https://x.com/soswater11" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fa-brands fa-x-twitter text-gray-300"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sos.water?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-instagram text-gray-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#achievements" class="text-gray-400 hover:text-white transition duration-300">Achievements</a></li>
+                        <li><a href="#lab" class="text-gray-400 hover:text-white transition duration-300">SOS Laboratory</a></li>
+                        <li><a href="#partnerships" class="text-gray-400 hover:text-white transition duration-300">Academic Partnerships</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Water Desalination</span></li>
+                        <li><span class="text-gray-400">Carbon Capture</span></li>
+                        <li><span class="text-gray-400">Operation & Maintenance</span></li>
+                        <li><span class="text-gray-400">Quality Management</span></li>
+                        <li><span class="text-gray-400">Safety & Environment</span></li>
+                        <li><span class="text-gray-400">Strategic Consulting</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <a href="https://maps.app.goo.gl/cMhWsF5NZ3svkwJw9" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                    <p>Liwa, Oman</p>
+                                    <p>Sohar Industrial Port Area</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <a href="mailto:info@sos.com.om" class="text-gray-400 hover:text-white transition duration-300">info@sos.com.om</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <a href="tel:+96822354902" class="text-gray-400 hover:text-white transition duration-300">+968 22354902</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 mt-12 py-8">
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-gray-400 mb-4">
+                        © 2025 Sohar Operation Services LLC. All rights reserved.
+                    </p>
+                    <div>
+                        <a href="https://github.com/Ahmed-Nadir-123" class="text-gray-400 hover:text-white transition duration-300">Built by Ahmed-Nadir-123</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 opacity-0 invisible">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Gallery images 
+        const images = [
+            'PIc-Website/DSC05559.jpg',
+            'PIc-Website/IMG_1187.JPG',
+            'PIc-Website/IMG_2201.JPG',
+            'PIc-Website/IMG_2556.JPG',
+            'PIc-Website/IMG_2710.JPG',
+            'PIc-Website/IMG_2720.JPG',
+            'PIc-Website/IMG_2725.JPG',
+            'PIc-Website/IMG_2728.JPG',
+            'PIc-Website/1291f20a-1bec-48bf-93ae-3380b7f788b9.jpg',
+            'PIc-Website/2.jpg',
+            'PIc-Website/3.jpg',
+            'PIc-Website/3d38e6da-ef09-4fc9-9614-1d2c64728d96.jpg',
+            'PIc-Website/6e0f56c7-e09f-4578-9615-1cf1ed503cab.jpg',
+            'PIc-Website/7ce2a03f-601f-48ef-9402-f6ce0cd60b2f.jpg',
+            'PIc-Website/8.jpg',
+            'PIc-Website/9c36260f-f29d-45bf-9c97-b91cfa36872a.jpg',
+            'PIc-Website/f7e2d94d-b076-4493-aaa9-a7b39cb8bfdf.jpg',
+            'PIc-Website/IMG_2728 - Copy.JPG'
+        ];
+
+        let currentIndex = 0;
+
+        function createIndicators() {
+            const indicatorsContainer = document.getElementById('indicators');
+            if (!indicatorsContainer) return;
+
+            indicatorsContainer.innerHTML = '';
+            images.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white' : 'bg-white/50'}`;
+                dot.addEventListener('click', () => goToSlide(index));
+                indicatorsContainer.appendChild(dot);
+            });
+        }
+
+        function updateIndicators() {
+            const dots = document.querySelectorAll('#indicators button');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-300 bg-white';
+                } else {
+                    dot.className = 'w-3 h-3 rounded-full transition-all duration-300 bg-white/50';
+                }
+            });
+        }
+
+        function showImage(index) {
+            const galleryImage = document.getElementById('galleryImage');
+            
+            if (galleryImage && images[index]) {
+                galleryImage.src = images[index];
+                updateIndicators();
+            }
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Initialize gallery when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImage = document.getElementById('galleryImage');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (galleryImage && prevBtn && nextBtn) {
+                // Create indicators
+                createIndicators();
+                
+                // Show first image
+                showImage(0);
+
+                // Add event listeners
+                prevBtn.addEventListener('click', prevImage);
+                nextBtn.addEventListener('click', nextImage);
+
+                // Keyboard navigation
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowLeft') prevImage();
+                    if (e.key === 'ArrowRight') nextImage();
+                });
+
+                // Auto-play (optional)
+                // setInterval(nextImage, 4000);
+            }
+        });
+    </script>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

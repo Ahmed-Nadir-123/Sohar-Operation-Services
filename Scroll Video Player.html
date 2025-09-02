@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Scroll Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .intro-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .intro-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .intro-content p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .scroll-video-section {
+            position: relative;
+            height: 500vh; /* 5 segments including hidden ones */
+        }
+
+        .video-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #scrollCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+        }
+
+        #hiddenVideo {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .segment-indicator {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 3;
+        }
+
+        .segment-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .segment-dot.active {
+            background: #ff6b6b;
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+        }
+
+        .segment-dot.completed {
+            background: #48dbfb;
+            box-shadow: 0 0 15px rgba(72, 219, 251, 0.6);
+        }
+
+        .progress-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 3;
+            backdrop-filter: blur(5px);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+            width: 0%;
+            transition: width 0.3s ease-out;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .scroll-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 3;
+            opacity: 0;
+            transition: all 0.6s ease;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 3rem;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            max-width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .scroll-text.visible {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .scroll-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .scroll-text p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Segment-specific colors */
+        .scroll-text:nth-child(4) h2 {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .scroll-text:nth-child(5) h2 {
+            background: linear-gradient(45deg, #48dbfb, #0abde3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .scroll-text:nth-child(6) h2 {
+            background: linear-gradient(45deg, #ff9ff3, #ee5a6f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials-section {
+            padding: 100px 50px;
+            background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .testimonials-title {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-video {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.3rem;
+            opacity: 0.8;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+        }
+
+        .loading-progress {
+            margin-top: 20px;
+            width: 300px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .performance-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            z-index: 3;
+            opacity: 0.8;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            z-index: 3;
+            opacity: 0.7;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .intro-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .scroll-text {
+                max-width: 95%;
+                padding: 2rem;
+            }
+            
+            .scroll-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .scroll-hint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-section">
+        <div class="intro-content">
+            <h1>Cinematic Scroll Experience</h1>
+            <p>Each scroll plays a complete scene</p>
+        </div>
+    </div>
+
+    <div class="scroll-video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <canvas id="scrollCanvas"></canvas>
+                <video id="hiddenVideo" preload="auto" muted>
+                    <source src="while-scroll-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+                <div class="loading-indicator" id="loadingIndicator">
+                    <div>Loading cinematic segments...</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar" id="loadingProgressBar"></div>
+                    </div>
+                </div>
+                
+                <div class="performance-indicator" id="performanceIndicator">
+                    Loading...
+                </div>
+
+                <div class="scroll-hint">
+                    👆 Scroll to play scenes
+                </div>
+                
+                <div class="segment-indicator">
+                    <div class="segment-dot" id="dot0" title="Opening Scene"></div>
+                    <div class="segment-dot" id="dot1" title="Main Story"></div>
+                    <div class="segment-dot" id="dot2" title="Finale"></div>
+                </div>
+                
+                <!-- ====================================
+                     📝 TEXT CONTENT - MODIFY HERE
+                     ==================================== -->
+                <div class="scroll-text" id="text0">
+                    <h2>Scene 1: Quick Intro</h2>
+                    <p>Brief opening sequence (0-15% of video)</p>
+                </div>
+                
+                <div class="scroll-text" id="text1">
+                    <h2>Scene 2: Main Journey</h2>
+                    <p>Extended story development (15-65% of video)</p>
+                </div>
+                
+                <div class="scroll-text" id="text2">
+                    <h2>Scene 3: Epic Finale</h2>
+                    <p>Powerful conclusion (65-100% of video)</p>
+                </div>
+                
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <h2 class="testimonials-title">What People Are Saying</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <video class="testimonial-video" controls preload="metadata">
+                    <source src="tot1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="testimonial-text">
+                    "The cinematic scroll experience is absolutely mesmerizing! Each scroll tells a complete story."
+                </p>
+            </div>
+            
+            <div class="testimonial-card">
+                <video class="testimonial-video" controls preload="metadata">
+                    <source src="tot2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="testimonial-text">
+                    "This is the future of web storytelling - automatic scene transitions are pure magic!"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class CinematicScrollVideo {
+            constructor() {
+                this.canvas = document.getElementById('scrollCanvas');
+                this.ctx = this.canvas.getContext('2d', {
+                    alpha: false,
+                    desynchronized: true,
+                    powerPreference: 'high-performance'
+                });
+                this.video = document.getElementById('hiddenVideo');
+                this.progressBar = document.getElementById('progressBar');
+                this.loadingIndicator = document.getElementById('loadingIndicator');
+                this.loadingProgressBar = document.getElementById('loadingProgressBar');
+                this.performanceIndicator = document.getElementById('performanceIndicator');
+                this.scrollSection = document.querySelector('.scroll-video-section');
+                
+                // ====================================
+                // 🎬 SEGMENT CONFIGURATION WITH HIDDEN BUFFERS - MODIFY HERE
+                // ====================================
+                this.segments = [
+                    // 🔍 HIDDEN BUFFER - Prevents first segment issues
+                    {
+                        id: -1,
+                        startPercent: 0,      // 📍 HIDDEN START: 0%
+                        endPercent: 0,        // 📍 HIDDEN END: 0%
+                        frameRate: 1,         // 🎥 MINIMAL FRAME RATE
+                        duration: 100,        // ⏱️ MINIMAL DURATION
+                        name: "Pre-Buffer",   // 🏷️ HIDDEN NAME
+                        hidden: true          // 👻 HIDDEN FLAG
+                    },
+                    {
+                        id: 0,
+                        startPercent: 0,      // 📍 SCENE 1 START: 0%
+                        endPercent: 0.15,     // 📍 SCENE 1 END: 15%
+                        frameRate: 20,        // 🎥 SCENE 1 FRAME RATE
+                        duration: 1200,       // ⏱️ SCENE 1 DURATION: 1.2 seconds
+                        name: "Opening"       // 🏷️ SCENE 1 NAME
+                    },
+                    {
+                        id: 1,
+                        startPercent: 0.15,   // 📍 SCENE 2 START: 15%
+                        endPercent: 0.63,     // 📍 SCENE 2 END: 65%
+                        frameRate: 30,        // 🎥 SCENE 2 FRAME RATE
+                        duration: 2500,       // ⏱️ SCENE 2 DURATION: 2.5 seconds
+                        name: "Main Story"    // 🏷️ SCENE 2 NAME
+                    },
+                    {
+                        id: 2,
+                        startPercent: 0.63,   // 📍 SCENE 3 START: 65%
+                        endPercent: 1.0,      // 📍 SCENE 3 END: 100%
+                        frameRate: 24,        // 🎥 SCENE 3 FRAME RATE
+                        duration: 2000,       // ⏱️ SCENE 3 DURATION: 2.0 seconds
+                        name: "Finale"        // 🏷️ SCENE 3 NAME
+                    },
+                    // 🔍 HIDDEN BUFFER - Prevents last segment issues
+                    {
+                        id: 3,
+                        startPercent: 1.0,    // 📍 HIDDEN START: 100%
+                        endPercent: 1.0,      // 📍 HIDDEN END: 100%
+                        frameRate: 1,         // 🎥 MINIMAL FRAME RATE
+                        duration: 100,        // ⏱️ MINIMAL DURATION
+                        name: "Post-Buffer",  // 🏷️ HIDDEN NAME
+                        hidden: true          // 👻 HIDDEN FLAG
+                    }
+                ];
+                
+                // ====================================
+                // 🎯 ANIMATION SETTINGS - MODIFY HERE
+                // ====================================                
+                this.textElements = [];
+                this.segmentDots = [];
+                
+                // Initialize elements (only for visible segments 0,1,2)
+                for (let i = 0; i < 3; i++) {
+                    this.textElements.push(document.getElementById(`text${i}`));
+                    this.segmentDots.push(document.getElementById(`dot${i}`));
+                }
+                
+                this.isVideoReady = false;
+                this.segmentFrames = {};
+                this.currentSegment = -1; // Start with hidden buffer
+                this.currentFrame = 0;
+                this.isAnimating = false;
+                this.animationId = null;
+                this.pixelRatio = window.devicePixelRatio || 1;
+                
+                // ====================================
+                // 🎮 SCROLL BEHAVIOR SETTINGS - MODIFY HERE
+                // ====================================
+                this.lastScrollY = 0;
+                this.scrollThreshold = 50;        // 📏 SCROLL SENSITIVITY: Higher = less sensitive
+                this.scrollTimeout = null;
+                this.completedSegments = new Set();
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupCanvas();
+                this.setupVideo();
+                this.bindEvents();
+                this.startPerformanceMonitoring();
+            }
+            
+            setupCanvas() {
+                const resizeCanvas = () => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    
+                    this.canvas.width = rect.width * this.pixelRatio;
+                    this.canvas.height = rect.height * this.pixelRatio;
+                    this.canvas.style.width = rect.width + 'px';
+                    this.canvas.style.height = rect.height + 'px';
+                    
+                    this.ctx.scale(this.pixelRatio, this.pixelRatio);
+                    this.ctx.imageSmoothingEnabled = true;
+                    this.ctx.imageSmoothingQuality = 'high';
+                };
+                
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+            }
+            
+            setupVideo() {
+                this.video.addEventListener('loadedmetadata', () => {
+                    console.log(`Video loaded: ${this.video.duration}s`);
+                    this.preloadSegments();
+                });
+                
+                this.video.addEventListener('error', (e) => {
+                    console.error('Video loading error:', e);
+                    this.loadingIndicator.innerHTML = '<div>Error loading video</div>';
+                });
+                
+                this.video.load();
+            }
+            
+            async preloadSegments() {
+                const startTime = performance.now();
+                let totalFrames = 0;
+                let loadedFrames = 0;
+                
+                // Calculate total frames (including hidden segments)
+                this.segments.forEach(segment => {
+                    const segmentDuration = (segment.endPercent - segment.startPercent) * this.video.duration;
+                    totalFrames += Math.floor(Math.max(1, segmentDuration * segment.frameRate));
+                });
+                
+                // Load each segment (including hidden ones)
+                for (const segment of this.segments) {
+                    console.log(`Loading ${segment.name}...`);
+                    this.segmentFrames[segment.id] = [];
+                    
+                    const segmentStartTime = segment.startPercent * this.video.duration;
+                    const segmentEndTime = segment.endPercent * this.video.duration;
+                    const segmentDuration = segmentEndTime - segmentStartTime;
+                    
+                    // For hidden segments with 0 duration, create a single frame
+                    if (segment.hidden && segmentDuration === 0) {
+                        const frameCanvas = await this.captureFrame(segmentStartTime);
+                        this.segmentFrames[segment.id].push(frameCanvas);
+                        loadedFrames++;
+                    } else {
+                        const frameCount = Math.floor(segmentDuration * segment.frameRate);
+                        const frameInterval = frameCount > 0 ? segmentDuration / frameCount : 0;
+                        
+                        for (let i = 0; i < Math.max(1, frameCount); i++) {
+                            try {
+                                const time = segmentStartTime + (i * frameInterval);
+                                const frameCanvas = await this.captureFrame(time);
+                                this.segmentFrames[segment.id].push(frameCanvas);
+                                
+                                loadedFrames++;
+                                const progress = (loadedFrames / totalFrames) * 100;
+                                this.loadingProgressBar.style.width = `${progress}%`;
+                                
+                                if (i % 2 === 0) {
+                                    await new Promise(resolve => setTimeout(resolve, 1));
+                                }
+                                
+                            } catch (error) {
+                                console.warn(`Failed to capture frame ${i} in ${segment.name}:`, error);
+                            }
+                        }
+                    }
+                    
+                    console.log(`${segment.name} loaded: ${this.segmentFrames[segment.id].length} frames`);
+                }
+                
+                const loadTime = performance.now() - startTime;
+                this.isVideoReady = true;
+                this.loadingIndicator.style.display = 'none';
+                
+                console.log(`All segments loaded in ${Math.round(loadTime)}ms`);
+                this.performanceIndicator.textContent = `Ready: 3 cinematic scenes`;
+                
+                // Initialize with first hidden buffer (shows first frame)
+                this.currentSegment = -1;
+                this.currentFrame = 0;
+                this.completedSegments.clear();
+                this.drawSegmentFrame(-1, 0);
+                this.updateUI();
+            }
+            
+            captureFrame(time) {
+                return new Promise((resolve, reject) => {
+                    const tempCanvas = document.createElement('canvas');
+                    const tempCtx = tempCanvas.getContext('2d');
+                    
+                    const onSeeked = () => {
+                        try {
+                            tempCanvas.width = this.canvas.width / this.pixelRatio;
+                            tempCanvas.height = this.canvas.height / this.pixelRatio;
+                            
+                            const videoAspect = this.video.videoWidth / this.video.videoHeight;
+                            const canvasAspect = tempCanvas.width / tempCanvas.height;
+                            
+                            let drawWidth, drawHeight, drawX, drawY;
+                            
+                            if (videoAspect > canvasAspect) {
+                                drawWidth = tempCanvas.width;
+                                drawHeight = drawWidth / videoAspect;
+                                drawX = 0;
+                                drawY = (tempCanvas.height - drawHeight) / 2;
+                            } else {
+                                drawHeight = tempCanvas.height;
+                                drawWidth = drawHeight * videoAspect;
+                                drawX = (tempCanvas.width - drawWidth) / 2;
+                                drawY = 0;
+                            }
+                            
+                            tempCtx.imageSmoothingEnabled = true;
+                            tempCtx.imageSmoothingQuality = 'high';
+                            tempCtx.drawImage(this.video, drawX, drawY, drawWidth, drawHeight);
+                            
+                            this.video.removeEventListener('seeked', onSeeked);
+                            resolve(tempCanvas);
+                        } catch (error) {
+                            this.video.removeEventListener('seeked', onSeeked);
+                            reject(error);
+                        }
+                    };
+                    
+                    this.video.addEventListener('seeked', onSeeked);
+                    this.video.currentTime = time;
+                });
+            }
+            
+            drawSegmentFrame(segmentId, frameIndex) {
+                const frames = this.segmentFrames[segmentId];
+                if (!frames || !frames[frameIndex]) return;
+                
+                const canvasWidth = this.canvas.width / this.pixelRatio;
+                const canvasHeight = this.canvas.height / this.pixelRatio;
+                
+                this.ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                this.ctx.drawImage(frames[frameIndex], 0, 0, canvasWidth, canvasHeight);
+            }
+            
+            bindEvents() {
+                let lastScrollTime = 0;
+                
+                const handleScroll = () => {
+                    if (!this.isVideoReady || this.isAnimating) return;
+                    
+                    const currentScrollY = window.scrollY;
+                    const scrollDelta = Math.abs(currentScrollY - this.lastScrollY);
+                    const currentTime = Date.now();
+                    
+                    // Debounce rapid scrolling
+                    if (currentTime - lastScrollTime < 100) return;
+                    
+                    // Check if scroll is significant enough
+                    if (scrollDelta > this.scrollThreshold) {
+                        this.detectScrollDirection(currentScrollY);
+                        this.lastScrollY = currentScrollY;
+                        lastScrollTime = currentTime;
+                    }
+                };
+                
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                
+                // Click on dots to jump to segments (only visible segments)
+                this.segmentDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        if (!this.isAnimating && this.isVideoReady) {
+                            this.playSegment(index); // Direct mapping to segment id
+                        }
+                    });
+                });
+                
+                window.addEventListener('resize', () => {
+                    this.setupCanvas();
+                    if (this.isVideoReady) {
+                        this.drawSegmentFrame(this.currentSegment, this.currentFrame);
+                    }
+                });
+            }
+            
+            detectScrollDirection(currentScrollY) {
+                const rect = this.scrollSection.getBoundingClientRect();
+                const sectionHeight = rect.height - window.innerHeight;
+                const scrollProgress = Math.max(0, Math.min(1, -rect.top / sectionHeight));
+
+                // Map scroll progress to all segments (including hidden ones)
+                let targetSegment = -1; // Default to first hidden buffer
+                
+                // 0-20% = Hidden Buffer (-1)
+                // 20-40% = Opening (0)  
+                // 40-60% = Main Story (1)
+                // 60-80% = Finale (2)
+                // 80-100% = Hidden Buffer (3)
+                
+                if (scrollProgress < 0.2) {
+                    targetSegment = -1; // Hidden pre-buffer
+                } else if (scrollProgress < 0.4) {
+                    targetSegment = 0;  // Opening
+                } else if (scrollProgress < 0.6) {
+                    targetSegment = 1;  // Main Story
+                } else if (scrollProgress < 0.8) {
+                    targetSegment = 2;  // Finale
+                } else {
+                    targetSegment = 3;  // Hidden post-buffer
+                }
+
+                // Determine scroll direction
+                const isScrollingDown = currentScrollY > this.lastScrollY;
+                
+                console.log(`Scroll Progress: ${(scrollProgress * 100).toFixed(1)}%, Target Segment: ${targetSegment}, Current: ${this.currentSegment}, Direction: ${isScrollingDown ? 'Down' : 'Up'}`);
+                
+                // If we've moved to a new segment, play it
+                if (targetSegment !== this.currentSegment) {
+                    // If scrolling up to a previous segment, play in reverse
+                    const shouldReverse = !isScrollingDown && targetSegment < this.currentSegment;
+                    this.playSegment(targetSegment, shouldReverse);
+                }
+            }
+            
+            playSegment(segmentId, reverse = false) {
+                if (this.isAnimating || !this.segmentFrames[segmentId]) return;
+                
+                const segment = this.segments.find(s => s.id === segmentId);
+                if (!segment) return;
+                
+                // Don't log or animate hidden segments
+                if (segment.hidden) {
+                    this.currentSegment = segmentId;
+                    this.currentFrame = 0;
+                    this.drawSegmentFrame(segmentId, 0);
+                    this.isAnimating = false;
+                    this.updateUI();
+                    return;
+                }
+                
+                const direction = reverse ? 'in reverse' : 'forward';
+                console.log(`Playing segment ${segmentId}: ${segment.name} ${direction}`);
+                
+                this.isAnimating = true;
+                this.currentSegment = segmentId;
+                
+                const frames = this.segmentFrames[segmentId];
+                const animationDuration = segment.duration;
+                const frameInterval = animationDuration / frames.length;
+                
+                // Set starting frame based on direction
+                let frameIndex = reverse ? frames.length - 1 : 0;
+                
+                const animate = () => {
+                    // Check if we have more frames to play
+                    const hasMoreFrames = reverse ? frameIndex >= 0 : frameIndex < frames.length;
+                    
+                    if (hasMoreFrames) {
+                        this.drawSegmentFrame(segmentId, frameIndex);
+                        this.currentFrame = frameIndex;
+                        
+                        // Move to next/previous frame based on direction
+                        frameIndex = reverse ? frameIndex - 1 : frameIndex + 1;
+                        
+                        this.animationId = setTimeout(animate, frameInterval);
+                    } else {
+                        // Animation complete
+                        this.isAnimating = false;
+                        this.completedSegments.add(segmentId);
+                        
+                        // Set final frame based on direction
+                        this.currentFrame = reverse ? 0 : frames.length - 1;
+                        this.updateUI();
+                        console.log(`Segment ${segmentId} completed ${direction}`);
+                    }
+                };
+                
+                // Start animation
+                this.updateUI();
+                animate();
+            }
+            
+            updateUI() {
+                // Update segment dots (only for visible segments 0, 1, 2)
+                this.segmentDots.forEach((dot, index) => {
+                    dot.classList.remove('active', 'completed');
+                    
+                    if (this.completedSegments.has(index)) {
+                        dot.classList.add('completed');
+                    } else if (index === this.currentSegment) {
+                        dot.classList.add('active');
+                    }
+                });
+                
+                // Update text overlays (only for visible segments)
+                this.textElements.forEach((element, index) => {  
+                    element.classList.toggle('visible', index === this.currentSegment);
+                });
+                
+                // Update progress bar (only count visible segments)
+                const visibleSegmentIndex = Math.max(0, Math.min(2, this.currentSegment));
+                const progress = ((visibleSegmentIndex + 1) / 3) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+            
+            startPerformanceMonitoring() {
+                let frameCount = 0;
+                let lastTime = performance.now();
+                
+                const updateStats = () => {
+                    frameCount++;
+                    const currentTime = performance.now();
+                    
+                    if (currentTime - lastTime >= 1000) {
+                        const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+                        const segment = this.segments.find(s => s.id === this.currentSegment);
+                        const statusText = this.isAnimating && segment && !segment.hidden 
+                            ? `Playing ${segment.name}` 
+                            : `Scene ${Math.max(1, Math.min(3, this.currentSegment + 1))}/3 Ready`;
+                        this.performanceIndicator.textContent = `${fps} FPS | ${statusText}`;
+                        frameCount = 0;
+                        lastTime = currentTime;
+                    }
+                    
+                    requestAnimationFrame(updateStats);
+                };
+                
+                updateStats();
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new CinematicScrollVideo();
+        });
+    </script>
+</body>
+</html>

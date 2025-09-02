@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sohar Operation Services LLC</title>
+    <meta name="description" content="Learn about Sohar Operation Services LLC - our foundation, vision, mission, strategies, and values that drive our water solutions excellence in Oman.">
+    
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#1365b8">
+    <meta name="color-scheme" content="light">
+    
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!--Icon Labrary-->
+    <script src="https://kit.fontawesome.com/0fe057ed38.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1365b8 0%, #2e2b92 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1365b8 0%, #2cb2ed 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Accessibility Improvements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 4px;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Focus styles for better accessibility */
+        *:focus {
+            outline: 3px solid #2cb2ed;
+            outline-offset: 2px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .gradient-text {
+                background: none;
+                -webkit-text-fill-color: initial;
+                color: #2d3748;
+            }
+        }
+        
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .water-animation {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .water-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: wave 3s infinite;
+        }
+        
+        @keyframes wave {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Pyramid Styles */
+        .pyramid-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pyramid-level {
+            position: relative;
+            margin-bottom: -1px;
+            transition: all 0.3s ease;
+        }
+        
+        .pyramid-level:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        
+        .pyramid-level-1 {
+            background: linear-gradient(135deg, #1365b8 0%, #2e2b92 100%);
+            clip-path: polygon(35% 0%, 65% 0%, 85% 100%, 15% 100%);
+            height: 120px;
+            margin: 0 auto 10px;
+            width: 200px;
+        }
+        
+        .pyramid-level-2 {
+            background: linear-gradient(135deg, #2cb2ed 0%, #1365b8 100%);
+            clip-path: polygon(25% 0%, 75% 0%, 90% 100%, 10% 100%);
+            height: 140px;
+            margin: 0 auto 10px;
+            width: 300px;
+        }
+        
+        .pyramid-level-3 {
+            background: linear-gradient(135deg, #43e97b 0%, #2cb2ed 100%);
+            clip-path: polygon(20% 0%, 80% 0%, 95% 100%, 5% 100%);
+            height: 160px;
+            margin: 0 auto 10px;
+            width: 400px;
+        }
+        
+        .pyramid-level-4 {
+            background: linear-gradient(135deg, #1365b8 0%, #2e2b92 100%);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+            height: 180px;
+            margin: 0 auto;
+            width: 500px;
+        }
+        
+        .pyramid-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 5;
+        }
+        
+        .pyramid-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pyramid-text {
+            font-size: 0.9rem;
+            line-height: 1.3;
+            max-width: 280px;
+        }
+        
+        .water-drop-bg {
+            background: radial-gradient(circle at center, rgba(19, 101, 184, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        /* Mobile accordion styles */
+        details[open] summary .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        details summary {
+            list-style: none;
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Improved focus states */
+        details summary:focus {
+            outline: 3px solid #2cb2ed;
+            outline-offset: 2px;
+        }
+        
+        /* Better responsive pyramid */
+        @media (max-width: 1024px) {
+            .pyramid-container {
+                display: none;
+            }
+        }
+        
+        /* Brand color overrides */
+        .nav-link:hover {
+            color: #1365b8 !important;
+        }
+        
+        .btn-primary {
+            background-color: #1365b8;
+            border-color: #1365b8;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2e2b92;
+            border-color: #2e2b92;
+        }
+        
+        .text-brand-blue {
+            color: #1365b8;
+        }
+        
+        .bg-brand-blue {
+            background-color: #1365b8;
+        }
+        
+        .border-brand-blue {
+            border-color: #1365b8;
+        }
+        
+        /* Hero Video Styles */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, #1365b8 0%, #2e2b92 100%);
+        }
+        
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .video-control-btn {
+            position: absolute;
+            top: 120px;
+            left: 32px;
+            z-index: 20;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        /* Navbar scroll effects */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            backdrop-filter: blur(10px);
+            padding: 0rem 0;
+        }
+        
+        .navbar.at-top {
+            background-color: transparent;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .navbar.at-top .text-gray-700 {
+            color: white !important;
+        }
+        
+        .navbar.at-top .text-brand-blue {
+            color: #60a5fa !important;
+        }
+        
+        .navbar.at-top .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .translate-y-cust{
+            transform:translateY(-130%);
+        }
+        
+        /* Enhanced Card Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient Text Animation */
+        .gradient-text-animated {
+            background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #10b981, #f59e0b);
+            background-size: 400% 400%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Fade in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive spacing adjustments */
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: translateY(-2px);
+            }
+        }
+        
+        /* Image Water Drop Styles */
+        .image-drop {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            /* Neumorphic shadow and rounded shape */
+            box-shadow:
+                inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+                25px 35px 20px rgba(0, 0, 0, 0.05),
+                25px 30px 30px rgba(0, 0, 0, 0.05),
+                inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+            transition: 0.5s ease-in-out;
+            border-radius: 53% 47% 71% 29% / 55% 65% 35% 45%;
+            background: linear-gradient(135deg, var(--clr), rgba(255, 255, 255, 0.1));
+            overflow: visible; /* Changed to visible so highlights show */
+        }
+
+        .image-drop:hover {
+            /* Smooth transition to a perfect circle on hover */
+            border-radius: 50%;
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .image-drop::before {
+            content: '';
+            position: absolute;
+            top: 55px;
+            left: 85px;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            opacity: 0.9;
+            z-index: 1000; /* Much higher z-index */
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .image-drop::after {
+            content: '';
+            position: absolute;
+            top: 90px;
+            left: 110px;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            opacity: 0.9;
+            z-index: 1000; /* Much higher z-index */
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Inner water droplet highlight */
+        .image-drop-content::before {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 60px;
+            height: 40px;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+            border-radius: 50% 30% 40% 60%;
+            transform: rotate(-20deg);
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        /* Additional inner highlight for realism */
+        .image-drop-content::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            right: 25%;
+            width: 25px;
+            height: 15px;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 70%, transparent 100%);
+            border-radius: 50%;
+            transform: rotate(-15deg);
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .image-drop-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1; /* Lower z-index than highlights */
+            overflow: hidden;
+            border-radius: inherit;
+        }
+        
+        .drop-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Apply the same water drop shape to the image */
+            border-radius: 53% 47% 71% 29% / 55% 65% 35% 45%;
+            filter: brightness(1.05) contrast(1.1);
+            transition: 0.5s ease-in-out;
+            position: relative;
+            z-index: 1; /* Lower z-index than highlights */
+        }
+
+        /* Make image transform with container on hover */
+        .image-drop:hover .drop-image {
+            border-radius: 50%;
+        }
+
+        /* Responsive adjustments for image water drops */
+        @media (max-width: 768px) {
+            .image-drop {
+                width: 320px;
+                height: 320px;
+            }
+            
+            .image-drop::before {
+                top: 45px;
+                left: 70px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .image-drop::after {
+                top: 75px;
+                left: 90px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-drop {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .image-drop-content {
+                padding: 0;
+            }
+        }
+
+        /* SOS Laboratory Bento Grid Styles */
+        .bento-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 16px;
+            padding: 8px;
+            border-radius: 12px;
+            width: 85%;
+            height: 500px;
+        }
+
+        .bento-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lab-image-card {
+            grid-column: span 2;
+            grid-row: span 1;
+            background-image: url('lab.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .lab-image-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+            border-radius: 12px;
+        }
+
+        .lab-accreditation-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f8fafc;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            line-height: 1.4;
+        }
+
+        .services-card-1 {
+            grid-column: span 1;
+            grid-row: span 1;
+            background: linear-gradient(135deg, #1365b8 0%, #2563eb 100%);
+            padding: 1.5rem;
+        }
+
+        .services-card-2 {
+            grid-column: span 1;
+            grid-row: span 1;
+            background: linear-gradient(135deg, #2e2b92 0%, #1e40af 100%);
+            padding: 1.5rem;
+        }
+
+        .services-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #f8fafc;
+            text-align: center;
+        }
+
+        .services-list li {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .logo-card {
+            background-image: url('SOS Lab logo wide.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            grid-column: span 2;
+            grid-row: span 1;
+            padding: 1rem;
+        }
+
+        .lab-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 120px;
+        }
+
+        /* Responsive Design for Bento Grid */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                max-width: 700px;
+                height: 450px;
+            }
+            
+            .lab-accreditation-text {
+                font-size: 1.1rem;
+            }
+            
+            .services-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                max-width: 500px;
+                height: 600px;
+                gap: 12px;
+            }
+            
+            .lab-image-card {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            
+            .services-card-1,
+            .services-card-2 {
+                grid-column: span 1;
+                grid-row: span 1;
+                padding: 1rem;
+            }
+            
+            .logo-card {
+                background-image: url('SOS Lab logo 1.svg');
+                grid-column: span 2;
+                grid-row: span 1;
+                background-size: cover;
+            }
+            
+            .lab-accreditation-text {
+                font-size: 1rem;
+            }
+            
+            .services-list li {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                max-width: 350px;
+                height: 700px;
+                gap: 10px;
+            }
+            
+            .lab-image-card,
+            .services-card-1,
+            .services-card-2 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .logo-card{
+                background-image: url('SOS Lab logo 1.svg');
+                grid-column: span 1;
+                grid-row: span 1;
+                background-size: cover;
+            }
+            
+            .services-card-1,
+            .services-card-2 {
+                padding: 1rem;
+            }
+            
+            .lab-accreditation-text {
+                font-size: 0.95rem;
+            }
+            
+            .services-list li {
+                font-size: 0.8rem;
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        /* University Partnership Browser Styles */
+        .university-partnership-browser {
+            margin: 1rem auto 3rem auto;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            overflow: hidden;
+        
+        }
+
+        /* Floating Decorative Elements */
+        .floating-decorations {
+            z-index: 1;
+        }
+
+        .floating-drop {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--drop-color);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+            animation-delay: var(--animation-delay);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+
+        .logo-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid rgba(19, 101, 184, 0.2);
+            filter: grayscale(70%);
+            opacity: 0.7;
+            box-shadow: 0 6px 20px -6px rgba(19, 101, 184, 0.2);
+            position: relative;
+        }
+
+        .logo-button::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .logo-button.active {
+            border-color: transparent;
+            width: 45px;
+            height: 45px;
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px -5px rgba(19, 101, 184, 0.4), 0 5px 15px -5px rgba(44, 178, 237, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(44, 178, 237, 0.08) 100%);
+        }
+
+        .logo-button.active::before {
+            opacity: 1;
+        }
+
+        .logo-button:hover:not(.active) {
+            transform: scale(1.05);
+            filter: grayscale(30%);
+            opacity: 0.9;
+        }
+
+        .logo-button img {
+            width: 65%;
+            height: 65%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .image-navigation-button {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            background: linear-gradient(135deg, rgba(19, 101, 184, 0.9) 0%, rgba(44, 178, 237, 0.9) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .image-navigation-button:hover {
+            background: linear-gradient(135deg, #0f52a0 0%, #1a9bd6 100%);
+            transform: scale(1.15);
+            box-shadow: 0 10px 25px -5px rgba(19, 101, 184, 0.5);
+        }
+
+        .left-section {
+            position: relative;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+
+        .right-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        /* Collaborations styling */
+        #collaborations-section {
+            background: linear-gradient(135deg, rgba(19, 101, 184, 0.04) 0%, rgba(44, 178, 237, 0.04) 100%);
+            border-radius: 12px;
+            padding: 1rem;
+            border-left: 4px solid #1365b8;
+            border: 1px solid rgba(19, 101, 184, 0.1);
+        }
+
+        #collaborations-list li {
+            line-height: 1.5;
+            color: #374151;
+            font-size: 0.85rem;
+            padding-left: 0.25rem;
+        }
+
+        #collaborations-list li .w-2 {
+            background: linear-gradient(135deg, #1365b8 0%, #2cb2ed 100%) !important;
+            box-shadow: 0 2px 4px rgba(19, 101, 184, 0.2);
+        }
+
+        #university-full-logo {
+            transition: all 0.3s ease;
+        }
+
+        #university-name {
+            background: linear-gradient(135deg, #1365b8 0%, #2cb2ed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #university-description {
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        #university-description::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1365b8, #2cb2ed);
+            border-radius: 2px;
+        }
+
+        /* Specific logo sizing adjustments */
+        #university-full-logo.imco-logo,
+        #university-full-logo.alkhaboura-logo {
+            height: 6rem !important; /* h-32 equivalent - larger than default h-24 */
+        }
+
+        #university-full-logo.sohar-uni-logo {
+            height: 6rem !important; /* h-28 equivalent - slightly larger */
+        }
+
+        #university-full-logo.utas-logo {
+            height: 6rem !important; /* h-24 - default size */
+        }
+
+        /* Mobile responsiveness for university browser */
+        @media (max-width: 768px) {
+            .university-partnership-browser .flex-col {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                width: 100%;
+            }
+            
+            .center-section {
+                width: 100%;
+                padding: 1rem 0;
+                border-left: none !important;
+                border-right: none !important;
+                border-top: 1px solid #e5e7eb;
+                border-bottom: 1px solid #e5e7eb;
+                display: flex;
+                justify-content: center;
+                min-width: auto;
+            }
+            
+            .center-section .flex-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .logo-button {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .logo-button.active {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        /* Team Section Styles */
+        .team-member {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-drop {
+            width: 350px;
+            height: 350px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .team-drop:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Remove water drop decorations completely for team drops */
+        .team-drop::before,
+        .team-drop::after {
+            display: none !important;
+        }
+
+        .team-drop .image-drop-content::before,
+        .team-drop .image-drop-content::after {
+            display: none !important;
+        }
+
+        .team-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(19, 101, 184, 0.6) 0%, rgba(44, 178, 237, 0.6) 100%);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+            padding-bottom: 3rem;
+        }
+
+        .team-drop:hover .team-overlay {
+            opacity: 1;
+        }
+
+        .team-info {
+            color: white;
+            padding: 1rem;
+        }
+
+        .team-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .team-role {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+
+        .team-image {
+            transition: all 0.3s ease;
+        }
+
+        .team-drop:hover .team-image {
+            transform: scale(1.1);
+        }
+
+        /* Mobile responsiveness for team section */
+        @media (max-width: 1280px) {
+            .team-drop {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-drop {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .team-name {
+                font-size: 1.1rem;
+            }
+            
+            .team-role {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-drop {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .team-name {
+                font-size: 1rem;
+            }
+            
+            .team-role {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar at-top w-full z-50 shadow-lg" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-16 w-16">
+                    <div class="text-2xl font-bold gradient-text">
+                        Sohar Operation Services
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 nav-link transition duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-brand-blue nav-link transition duration-300 font-black">About</a>
+                    <a href="contact.html" class="text-gray-700 nav-link transition duration-300 font-medium">Contact</a>
+                    <a href="https://form.jotform.com/251061143545448" target="_blank" class="text-gray-700 nav-link transition duration-300 font-medium">Internship</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" 
+                            class="text-gray-700 nav-link"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            aria-label="Open navigation menu">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50" role="dialog" aria-labelledby="mobile-menu-title" aria-hidden="true">
+            <div class="flex items-center justify-between p-4 border-b">
+                <span id="mobile-menu-title" class="text-xl font-bold gradient-text">Menu</span>
+                <button id="mobile-menu-close" 
+                        class="text-gray-700"
+                        aria-label="Close navigation menu">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="py-4">
+                <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="about.html" class="block px-4 py-2 text-brand-blue font-semibold bg-gray-100">About</a>
+                <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+                <a href="https://form.jotform.com/251061143545448" target="_blank" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100">Internship</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero-section min-h-screen flex items-center justify-center text-white pt-28 relative overflow-hidden">
+        <!-- Video Background -->
+        <div class="hero-video-container absolute inset-0 w-full h-full">
+            <video class="hero-video w-full h-full object-cover" id="about-hero-video" autoplay muted loop playsinline>
+                <source src="about-video-hero.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        
+        <!-- Play/Pause Button (Tesla Style) -->
+        <button class="video-control-btn absolute top-24 left-8 z-20 bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300" id="video-play-pause" aria-label="Play/Pause video">
+            <i class="fas fa-pause text-white text-lg" id="play-pause-icon"></i>
+        </button>
+        
+        <!-- Hero Content -->
+        <div class="hero-content absolute top-1/3 transform  translate-y-cust text-center z-10">
+            <div class="fade-in">
+                <h3 class="text-4xl md:text-5xl font-bold mb-4 leading-tight tracking-tight text-white">
+                    About Us
+                </h3>
+            </div>
+            <div class="fade-in fade-in-delay-1">
+                <p class="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed font-light">
+                    We gather to grow, together
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Foundation Section -->
+    <main id="main-content">
+    <section class="py-20 bg-white" style="display: flex; flex-direction: column;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="max-width: 90%;">
+            <!-- Company Overview -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Text Content -->
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Who are we</h2>
+                    <p class="text-xl leading-relaxed">
+                        Sohar Operation Services Company (SOS) is the operations and maintenance contractor for the Sohar 4 Independent Water Project (IWP).
+                        <br><br>This project is one of Oman's largest seawater reverse osmosis desalination plants.
+                    </p>
+                </div>
+                
+                <!-- Water Drop Image -->
+                <div class="fade-in fade-in-delay-1 flex justify-center">
+                    <div class="image-drop" style="--clr: #01B4FF;">
+                        <div class="image-drop-content">
+                            <img src="CB1_2811-1024x681.jpg" alt="Sohar Desalination Plant Facility showcasing modern water treatment infrastructure" class="drop-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12" style="margin-bottom: 6rem;">
+                <!-- Company Image -->
+                
+                
+                <!-- Mission & Key Points -->
+                <div class="lg:col-span-4 fade-in fade-in-delay-1">
+                    <h3 class="text-center text-3xl font-bold text-gray-900 my-6">What we have</h3>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-water text-brand-blue" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Advanced SWRO Technology</h4>
+                                <p class="text-gray-600">Largest seawater reverse osmosis desalination plant in Oman with 1.3km intake system</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-leaf text-green-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Operational Excellence</h4>
+                                <p class="text-gray-600">Preventive and corrective maintenance with strict regulatory compliance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake" style="color: #2e2b92;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Consortium Partnership</h4>
+                                <p class="text-gray-600">Owned by MGODC consortium: Oman Brunei Investment Company &amp; Sogex Oman Co.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i class="fas fa-award" style="color: #2cb2ed;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Quality Assurance</h4>
+                                <p class="text-gray-600">ISO/IEC 17025 accredited laboratory and water quality management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+     <!-- Values Section -->
+    <section id="values" class="py-20 bg-white" style="margin-bottom: 15rem;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">Our Core Values</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    The fundamental values that define our culture and guide our actions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Value 1: Integrity -->
+                <div class="text-center fade-in">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-200">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3">Integrity</h3>
+                </div>
+                
+                <!-- Value 2: Transparency -->
+                <div class="text-center fade-in fade-in-delay-1">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-200">
+                        <i class="fas fa-eye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3">Transparency</h3>
+                </div>
+                
+                <!-- Value 3: Consistency -->
+                <div class="text-center fade-in fade-in-delay-2">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-200">
+                        <i class="fas fa-sync text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3">Consistency</h3>
+                </div>
+                
+                <!-- Value 4: Quality -->
+                <div class="text-center fade-in">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-200">
+                        <i class="fas fa-medal text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3">Quality</h3>
+                </div>
+                
+                <!-- Value 5: Teamwork -->
+                <div class="text-center fade-in fade-in-delay-1">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-200">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3">Teamwork</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Vision & Mission Section with Modern Design -->
+    <section class="py-20 bg-black" style="box-shadow: 0rem 0rem 5rem 7rem #000;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="max-width: 90%;">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in">Vision & Mission</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Our guiding principles that drive excellence and innovation in water operations
+                </p>
+            </div>
+            
+            <!-- Vision Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <!-- Vision Text Content -->
+                <div class="fade-in">
+                    <h3 class="text-4xl md:text-5xl font-bold mb-6 text-white">Our Vision</h3>
+                    <p class="text-xl leading-relaxed text-gray-300">
+                        To become the top Water Operation Company providing unique services supported by sustainable development
+                    </p>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Industry Leadership</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Sustainable Development</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Unique Service Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision Image -->
+                <div class="fade-in fade-in-delay-1 flex justify-center">
+                    <div class="image-drop" style="--clr: #01B4FF;">
+                        <div class="image-drop-content">
+                            <img src="vision-computer.png" alt="Vision - Computer and Technology" class="drop-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mission Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Mission Image -->
+                <div class="fade-in fade-in-delay-1 flex justify-center lg:order-1">
+                    <div class="image-drop" style="--clr: #28A745;">
+                        <div class="image-drop-content">
+                            <img src="mession.jpg" alt="Mission - Water Operations" class="drop-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mission Text Content -->
+                <div class="fade-in lg:order-2">
+                    <h3 class="text-4xl md:text-5xl font-bold mb-6 text-white">Our Mission</h3>
+                    <p class="text-xl leading-relaxed text-gray-300">
+                        Deliver world-class services tailored to the needs of our clients through sustainable operation driven and empowered by innovative resources
+                    </p>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">World-Class Services</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Client-Tailored Solutions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-300">Innovation & Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOS Laboratory Section -->
+    <section class="py-20" style="padding-top: 15rem;" id="lab">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">SOS Laboratory®</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    ISO/IEC 17025 Accredited Testing Facility with globally recognized standards including APHA, ISO, and ASTM methodologies.
+                </p>
+            </div>
+            
+            <!-- Bento Grid Container -->
+            <div class="bento-container fade-in">
+                <div class="bento-grid">
+                    <!-- Lab Image Card (spans 2 columns) -->
+                    <div class="bento-card lab-image-card">
+                        <p class="lab-accreditation-text">ISO/IEC 17025 accredited laboratory.</p>
+                    </div>
+                    
+                    <!-- Services Card 1 -->
+                    <div class="bento-card services-card-1">
+                        <ul class="services-list">
+                            <li>Microbiological analysis</li>
+                            <li>Nutritional profiling</li>
+                            <li>Heavy metal detection</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Services Card 2 -->
+                    <div class="bento-card services-card-2">
+                        <ul class="services-list">
+                            <li>Pesticide residue analysis</li>
+                            <li>General physicochemical water testing</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- SOS Lab Logo Card (spans 2 columns) -->
+                    <div class="bento-card logo-card">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Partnerships Section -->
+    <section class="py-20 bg-white" id="partnerships">
+        <div class="w-full mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">Academic Partnerships</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Strengthening the connection between industry and education through formal Memorandums of Understanding
+                </p>
+            </div>
+            
+            <!-- Interactive University Partnership Browser -->
+            <div class="university-partnership-browser bg-white overflow-hidden mb-12 relative">
+                <!-- Floating Decorative Elements -->
+                <div class="floating-decorations absolute inset-0 pointer-events-none">
+                    <div class="floating-drop" style="top: 10%; left: 5%; --drop-color: #1365b8; --animation-delay: 0s;"></div>
+                    <div class="floating-drop" style="top: 70%; right: 8%; --drop-color: #2cb2ed; --animation-delay: 2s;"></div>
+                    <div class="floating-drop" style="top: 30%; right: 15%; --drop-color: #1365b8; --animation-delay: 4s;"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-7 gap-0 h-[280px]">
+                    <!-- Left Section: University Details -->
+                    <div class="right-section lg:col-span-4 p-4 lg:p-6 flex flex-col justify-between h-full overflow-hidden">
+                        <div class="flex-1 overflow-y-auto">
+                            <!-- University Name -->
+                            <h2 id="university-name" class="text-lg  font-bold text-gray-900 mb-3 leading-tight">
+                                Select a University
+                            </h2>
+                            
+                            <!-- University Full Logo -->
+                            <div class="mb-4">
+                                <img id="university-full-logo" src="" alt="University Logo" class="h-12 object-contain">
+                            </div>
+                            
+                            <!-- University Description -->
+                            <p id="university-description" class="text-sm text-gray-600 mb-4 leading-relaxed">
+                                Explore our academic partnerships and collaborative initiatives.
+                            </p>
+                            
+                            <!-- Collaborations List -->
+                            <div id="collaborations-section" class="mb-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-3">Our Collaborations</h4>
+                                <ul id="collaborations-list" class="space-y-2">
+                                    <!-- Collaborations will be populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- University Navigation Buttons at Bottom -->
+                        <div class="border-t border-gray-200 pt-4">
+                            <div id="logo-buttons-container" class="flex items-center justify-center gap-3 flex-wrap">
+                                <!-- University logos will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Image Gallery -->
+                    <div class="left-section relative lg:col-span-3 bg-gray-100 overflow-hidden">
+                        <div class="h-full flex justify-center items-center">
+                            <img id="university-image" src="suhar-uni-logo.jpg" alt="University Campus" class="w-full h-full object-cover">
+                        </div>
+                        <button id="prev-image" class="image-navigation-button absolute left-4 top-1/2 transform -translate-y-1/2">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="next-image" class="image-navigation-button absolute right-4 top-1/2 transform -translate-y-1/2">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partnership Objectives -->
+            <div class="bg-white p-8 fade-in mt-24">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">Partnership Objectives</h3>
+                    <p class="text-gray-600">
+                        Fostering innovation, knowledge sharing, and sustainable growth through education-industry collaboration
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-blue-200">
+                            <i class="fas fa-user-graduate text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-blue-700">Internship Opportunities</h4>
+                        <p class="text-sm text-gray-600">Providing hands-on training and experience for students</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-blue-200">
+                            <i class="fas fa-microscope text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-blue-700">Technical Research</h4>
+                        <p class="text-sm text-gray-600">Supporting research and field studies in water technology</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-blue-200">
+                            <i class="fas fa-chalkboard-teacher text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-blue-700">Knowledge Transfer</h4>
+                        <p class="text-sm text-gray-600">Organizing workshops, seminars, and awareness programs</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-blue-200">
+                            <i class="fas fa-eye text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-blue-700">Vision 2040</h4>
+                        <p class="text-sm text-gray-600">Contributing to Oman Vision 2040 and national development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="py-20" id="team">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-in">Our Team</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                    Meet the dedicated professionals driving our mission forward with expertise and passion
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+                <!-- Team Member 1: Abdullah Al-Sadi -->
+                <div class="team-member fade-in">
+                    <div class="image-drop team-drop" style="--clr: #1365b8;">
+                        <div class="image-drop-content">
+                            <img src="team/عبدالله-السعدي-المدير-العام.png" alt="Abdullah Al-Sadi" class="drop-image team-image" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h3 class="team-name">Abdullah Al-Sadi</h3>
+                                    <p class="team-role">General Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2: Ahmed Al-Nofli -->
+                <div class="team-member fade-in fade-in-delay-1">
+                    <div class="image-drop team-drop" style="--clr: #2cb2ed;">
+                        <div class="image-drop-content">
+                            <img src="team/احمد-النوفلي-CFO.png" alt="Ahmed Al-Nofli" class="drop-image team-image" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h3 class="team-name">Ahmed Al-Nofli</h3>
+                                    <p class="team-role">CFO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3: Manish -->
+                <div class="team-member fade-in fade-in-delay-2">
+                    <div class="image-drop team-drop" style="--clr: #1365b8;">
+                        <div class="image-drop-content">
+                            <img src="team/manish-IT-manager.png" alt="Manish" class="drop-image team-image" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h3 class="team-name">Manish</h3>
+                                    <p class="team-role">IT Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second row for last two members - centered -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-28 justify-items-center max-w-2xl mx-auto mt-12">
+                <!-- Team Member 4: Alam -->
+                <div class="team-member fade-in">
+                    <div class="image-drop team-drop" style="--clr: #2cb2ed;">
+                        <div class="image-drop-content">
+                            <img src="team/علم-maintenance-manager.png" alt="Alam" class="drop-image team-image" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h3 class="team-name">Alam</h3>
+                                    <p class="team-role">Maintenance Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5: Mohammed Al-Jahoori -->
+                <div class="team-member fade-in fade-in-delay-1">
+                    <div class="image-drop team-drop" style="--clr: #1365b8;">
+                        <div class="image-drop-content">
+                            <img src="team/محمد-الجهوري-مدير-مشتريات.png" alt="Mohammed Al-Jahoori" class="drop-image team-image" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h3 class="team-name">Mohammed Al-Jahoori</h3>
+                                    <p class="team-role">Procurement Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center text-2xl font-bold gradient-text mb-4">
+                        <img src="logo.svg" alt="Sohar Operation Services Logo" class="h-10 w-10 mr-3">
+                        Sohar Operation Services
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Leading water solutions provider in Oman, operating the country's second-largest desalination plant 
+                        and pioneering sustainable water technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/sohar-operation-services-llc/" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-linkedin text-gray-300"></i>
+                        </a>
+                        <a href="https://x.com/soswater11" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fa-brands fa-x-twitter text-gray-300"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sos.water?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            <i class="fab fa-instagram text-gray-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#achievements" class="text-gray-400 hover:text-white transition duration-300">Achievements</a></li>
+                        <li><a href="#lab" class="text-gray-400 hover:text-white transition duration-300">SOS Laboratory</a></li>
+                        <li><a href="#partnerships" class="text-gray-400 hover:text-white transition duration-300">Academic Partnerships</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Water Desalination</span></li>
+                        <li><span class="text-gray-400">Carbon Capture</span></li>
+                        <li><span class="text-gray-400">Operation & Maintenance</span></li>
+                        <li><span class="text-gray-400">Quality Management</span></li>
+                        <li><span class="text-gray-400">Safety & Environment</span></li>
+                        <li><span class="text-gray-400">Strategic Consulting</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <a href="https://maps.app.goo.gl/cMhWsF5NZ3svkwJw9" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                    <p>Liwa, Oman</p>
+                                    <p>Sohar Industrial Port Area</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <a href="mailto:info@sos.com.om" class="text-gray-400 hover:text-white transition duration-300">info@sos.com.om</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <a href="tel:+96822354902" class="text-gray-400 hover:text-white transition duration-300">+968 22354902</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 mt-12 py-8">
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-gray-400 mb-4">
+                        © 2025 Sohar Operation Services LLC. All rights reserved.
+                    </p>
+                    <div>
+                        <a href="https://github.com/Ahmed-Nadir-123" class="text-gray-400 hover:text-white transition duration-300">Built by Ahmed-Nadir-123</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        
+        function updateNavbar() {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('at-top');
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('at-top');
+            }
+        }
+        
+        // Initial check
+        updateNavbar();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', updateNavbar);
+        
+        // Video play/pause functionality
+        const video = document.getElementById('about-hero-video');
+        const playPauseBtn = document.getElementById('video-play-pause');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+        
+        if (video && playPauseBtn) {
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playPauseIcon.classList.remove('fa-play');
+                    playPauseIcon.classList.add('fa-pause');
+                } else {
+                    video.pause();
+                    playPauseIcon.classList.remove('fa-pause');
+                    playPauseIcon.classList.add('fa-play');
+                }
+            });
+            
+            // Update button icon based on video state
+            video.addEventListener('play', () => {
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            });
+            
+            video.addEventListener('pause', () => {
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            });
+        }
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+            }
+        });
+        
+        // Close mobile menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.focus();
+            }
+        });
+
+        // University Partnership Browser Functionality
+        const universities = [
+            {
+                id: 'uni1',
+                index: '01',
+                name: 'University of Technology and Applied Sciences-Sohar',
+                description: 'A leading institution focused on engineering, technology, and applied sciences, fostering innovation and practical learning for the future workforce.',
+                logo: 'UTAS_Logo_icon.png',
+                fullLogo: 'university/logo/UTAS_Logo_icon.png',
+                collaborations: [
+                    'Student Visits: Hosted SOS to prepare students for the job market.',
+                    'Panel Discussion: Discussed integrating knowledge and training for career development.',
+                    'MOU: Signed an MOU to exchange expertise in various fields.'
+                ],
+                images: [
+                    'university/UTAS-suhar/image1.jpg',
+                    'university/UTAS-suhar/image2.jpg',
+                    'university/UTAS-suhar/image3.jpg',
+                    'university/UTAS-suhar/image4.jpg',
+                    'university/UTAS-suhar/image5.jpg',
+                    'university/UTAS-suhar/image6.jpg'
+                ]
+            },
+            {
+                id: 'uni2',
+                index: '02',
+                name: 'University of Technology and Applied Sciences-Shinas',
+                description: 'UTAS Shinas specializes in applied sciences and technical education with focus on environmental research and sustainable water quality studies.',
+                logo: 'UTAS_Logo_icon.png',
+                fullLogo: 'university/logo/UTAS_Logo_icon.png',
+                collaborations: [
+                    'Partnership: Participated in a dialogue session on strategic partnerships.',
+                    'Career Development: Involved in career fairs for student engagement.',
+                    'MOU: Signed an MOU for training and development expertise exchange.'
+                ],
+                images: [
+                    'university/UTAS-shinas/image1.jpg',
+                    'university/UTAS-shinas/image2.jpg',
+                    'university/UTAS-shinas/image3.jpg',
+                    'university/UTAS-shinas/image4.jpg',
+                    'university/UTAS-shinas/image5.jpg',
+                    'university/UTAS-shinas/image6.jpg',
+                    'university/UTAS-shinas/image7.jpg',
+                    'university/UTAS-shinas/image8.jpg'
+                ]
+            },
+            {
+                id: 'uni3',
+                index: '03',
+                name: 'Sohar University',
+                description: 'A prominent private university offering diverse academic programs with focus on research and innovation, driving academic excellence in the region.',
+                logo: 'suhar-uni-icon.jpg',
+                fullLogo: 'university/logo/suhar-uni-icon.jpg',
+                collaborations: [
+                    'Collaboration: Partnered with SOS for a NASA-funded research workshop.',
+                    'MOU: Signed an MOU for scientific and practical expertise exchange.',
+                    'Student Engagement: Hosts student industrial visits.'
+                ],
+                images: [
+                    'university/Suhar-university/image1.jpg',
+                    'university/Suhar-university/image2.jpg',
+                    'university/Suhar-university/image3.jpg',
+                    'university/Suhar-university/image4.jpg',
+                    'university/Suhar-university/image5.jpg',
+                    'university/Suhar-university/image6.jpg',
+                    'university/Suhar-university/image7.jpg'
+                ]
+            },
+            {
+                id: 'uni4',
+                index: '04',
+                name: 'International Maritime College Oman (IMCO)',
+                description: 'A specialized maritime institution providing cutting-edge education and training in marine sciences and maritime technologies.',
+                logo: 'imco.jpeg',
+                fullLogo: 'university/logo/imco.jpeg',
+                collaborations: [
+                    'Career Guidance: Partnered with SOS for a Career Guidance Day.',
+                    'MOU: Signed an MOU to enhance internships and curriculum.',
+                    'Innovation: Fosters innovation and professional growth.'
+                ],
+                images: [
+                    'university/IMCO/image1.jpg',
+                    'university/IMCO/image2.jpg',
+                    'university/IMCO/image3.jpg',
+                    'university/IMCO/image4.jpg',
+                    'university/IMCO/image5.jpg',
+                    'university/IMCO/image6.jpg',
+                    'university/IMCO/image7.jpg',
+                    'university/IMCO/image8.jpg',
+                    'university/IMCO/image9.jpg',
+                    'university/IMCO/image10.jpg'
+                ]
+            },
+            {
+                id: 'uni5',
+                index: '05',
+                name: 'Al Kaboura Vocational College',
+                description: 'Al Kaboura Vocational College provides comprehensive technical and vocational education with focus on practical skills development and career preparation.',
+                logo: 'alka-icon.jpeg',
+                fullLogo: 'university/logo/alka.jpeg',
+                collaborations: [
+                    'Cadre Development: Committed to raising the efficiency of national cadres among students.',
+                    'Training: Aims to enhance vocational training and exchange technical expertise.',
+                    'MOU: Signed MOU with SOS at the Ministry of Labour.'
+                ],
+                images: [
+                    'university/Alkhabura/image1.jpg',
+                    'university/Alkhabura/image2.jpg',
+                    'university/Alkhabura/image3.jpg',
+                    'university/Alkhabura/image4.jpg',
+                    'university/Alkhabura/image5.jpg',
+                    'university/Alkhabura/image6.jpg',
+                    'university/Alkhabura/image7.jpg',
+                    'university/Alkhabura/image8.jpg',
+                    'university/Alkhabura/image9.jpg'
+                ]
+            }
+        ];
+
+        let activeUniversityId = null;
+        let currentImageIndex = 0;
+
+        const logoButtonsContainer = document.getElementById('logo-buttons-container');
+        const universityImage = document.getElementById('university-image');
+        const universityName = document.getElementById('university-name');
+        const universityDescription = document.getElementById('university-description');
+        const universityFullLogo = document.getElementById('university-full-logo');
+        const universityIndex = document.getElementById('university-index');
+        const collaborationsList = document.getElementById('collaborations-list');
+        const prevImageButton = document.getElementById('prev-image');
+        const nextImageButton = document.getElementById('next-image');
+
+        function updateContent(uni) {
+            // Update university index
+            if (universityIndex) {
+                universityIndex.textContent = uni.index;
+            }
+            
+            // Update university name
+            universityName.textContent = uni.name;
+            
+            // Update university description
+            if (universityDescription) {
+                universityDescription.textContent = uni.description;
+            }
+            
+            // Update full logo with specific sizing class
+            universityFullLogo.src = uni.fullLogo;
+            universityFullLogo.alt = `${uni.name} Logo`;
+            
+            // Remove all logo size classes first
+            universityFullLogo.classList.remove('imco-logo', 'alkhaboura-logo', 'sohar-uni-logo', 'utas-logo');
+            
+            // Add specific logo size class based on university
+            switch(uni.id) {
+                case 'uni4': // IMCO
+                    universityFullLogo.classList.add('imco-logo');
+                    break;
+                case 'uni5': // Al Kaboura
+                    universityFullLogo.classList.add('alkhaboura-logo');
+                    break;
+                case 'uni3': // Sohar University
+                    universityFullLogo.classList.add('sohar-uni-logo');
+                    break;
+                case 'uni1': // UTAS Sohar
+                case 'uni2': // UTAS Shinas
+                    universityFullLogo.classList.add('utas-logo');
+                    break;
+                default:
+                    universityFullLogo.classList.add('utas-logo');
+            }
+            
+            // Update collaborations list
+            collaborationsList.innerHTML = '';
+            uni.collaborations.forEach(collaboration => {
+                const listItem = document.createElement('li');
+                listItem.className = 'flex items-start text-gray-600';
+                listItem.innerHTML = `
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>${collaboration}</span>
+                `;
+                collaborationsList.appendChild(listItem);
+            });
+            
+            // Reset image index and update image
+            currentImageIndex = 0;
+            if (uni.images && uni.images.length > 0) {
+                universityImage.src = uni.images[currentImageIndex];
+                universityImage.alt = `${uni.name} Campus`;
+            }
+        }
+
+        function setActiveButton(uniId) {
+            const buttons = document.querySelectorAll('.logo-button');
+            buttons.forEach(button => {
+                if (button.dataset.uniId === uniId) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+            activeUniversityId = uniId;
+        }
+
+        function createLogoButtons() {
+            if (!logoButtonsContainer) return;
+            
+            universities.forEach(uni => {
+                const button = document.createElement('div');
+                button.classList.add('logo-button');
+                button.dataset.uniId = uni.id;
+                button.innerHTML = `<img src="university/logo/${uni.logo}" alt="${uni.name} Logo">`;
+                button.addEventListener('click', () => {
+                    updateContent(uni);
+                    setActiveButton(uni.id);
+                });
+                logoButtonsContainer.appendChild(button);
+            });
+        }
+
+        function navigateImage(direction) {
+            if (!activeUniversityId) return;
+
+            const activeUni = universities.find(uni => uni.id === activeUniversityId);
+            if (!activeUni || activeUni.images.length === 0) return;
+
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = activeUni.images.length - 1;
+            } else if (currentImageIndex >= activeUni.images.length) {
+                currentImageIndex = 0;
+            }
+            universityImage.src = activeUni.images[currentImageIndex];
+        }
+
+        // Event listeners for image navigation
+        if (prevImageButton && nextImageButton) {
+            prevImageButton.addEventListener('click', () => navigateImage(-1));
+            nextImageButton.addEventListener('click', () => navigateImage(1));
+        }
+
+        // Initialize university partnership browser
+        document.addEventListener('DOMContentLoaded', () => {
+            createLogoButtons();
+            // Set the first university as active initially
+            if (universities.length > 0) {
+                updateContent(universities[0]);
+                setActiveButton(universities[0].id);
+            }
+        });
+    </script>
+</body>
+</html>
